@@ -1,4 +1,4 @@
-//main package has examples shown
+// main package has examples shown
 // in Go Data Structures and algorithms book
 package main
 
@@ -20,13 +20,13 @@ func (iheap IntegerHeap) Less(i, j int) bool { return iheap[i] < iheap[j] }
 // IntegerHeap method -swaps the element of i to j index
 func (iheap IntegerHeap) Swap(i, j int) { iheap[i], iheap[j] = iheap[j], iheap[i] }
 
-//IntegerHeap method -pushes the item
+// IntegerHeap method -pushes the item
 func (iheap *IntegerHeap) Push(heapintf interface{}) {
 
 	*iheap = append(*iheap, heapintf.(int))
 }
 
-//IntegerHeap method -pops the item from the heap
+// IntegerHeap method -pops the item from the heap
 func (iheap *IntegerHeap) Pop() interface{} {
 	var n int
 	var x1 int
@@ -42,7 +42,9 @@ func main() {
 	var intHeap *IntegerHeap = &IntegerHeap{1, 4, 5}
 
 	heap.Init(intHeap)
+	heap.Push(intHeap, 8)
 	heap.Push(intHeap, 2)
+	heap.Push(intHeap, 7)
 	fmt.Printf("minimum: %d\n", (*intHeap)[0])
 	for intHeap.Len() > 0 {
 		fmt.Printf("%d \n", heap.Pop(intHeap))
